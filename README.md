@@ -1,8 +1,8 @@
-# Leakage-Controlled Multimodal Music Context Understanding with Relation-Aware GNNs and BERT
+# Advanced Multimodal Music Context Understanding with Relation-Aware GNNs and BERT
 
 **Course:** CSE425 - Neural Networks  
-**Author:** Liza And Lazim 
-**Student ID:*22201148 And 22101325 * 
+**Author:** Liza Akther And Lazim Muhammad Sharar
+**Student ID:* 22201148 And 22101325 * 
 **Institution:** BRAC University
 
 ## Overview
