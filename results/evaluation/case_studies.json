@@ -1,0 +1,350 @@
+[
+  {
+    "track_id": "d__belief_systems-eproms-04-doorbells_in_your_mind-117-146",
+    "text": "beat",
+    "sample_f1": 1.0,
+    "true_tags": [
+      "techno",
+      "electronic",
+      "dance"
+    ],
+    "predicted_tags": [
+      "techno",
+      "electronic",
+      "dance"
+    ],
+    "top_predictions": [
+      {
+        "tag": "techno",
+        "probability": 0.9011749029159546,
+        "threshold": 0.7999999999999999,
+        "is_true": true,
+        "is_predicted": true
+      },
+      {
+        "tag": "electronic",
+        "probability": 0.8016277551651001,
+        "threshold": 0.65,
+        "is_true": true,
+        "is_predicted": true
+      },
+      {
+        "tag": "indian",
+        "probability": 0.664769172668457,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "dance",
+        "probability": 0.6259191036224365,
+        "threshold": 0.6,
+        "is_true": true,
+        "is_predicted": true
+      },
+      {
+        "tag": "rock",
+        "probability": 0.5746587514877319,
+        "threshold": 0.75,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "trance",
+        "probability": 0.42985454201698303,
+        "threshold": 0.7999999999999999,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "pop",
+        "probability": 0.2987311780452728,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "eastern",
+        "probability": 0.2037416249513626,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      }
+    ],
+    "num_nodes": 29,
+    "num_edges": 228,
+    "edge_counts": {
+      "temporal": 110,
+      "harmonic": 60,
+      "timbral": 58
+    },
+    "relation_attention_mean": {
+      "temporal": 0.26363635063171387,
+      "harmonic": 0.46666668355464935,
+      "timbral": 0.48275861144065857
+    },
+    "segment_attention": [
+      0.12578065693378448,
+      0.008840473368763924,
+      0.014010482467710972,
+      0.014386726543307304,
+      0.02523932047188282,
+      0.016265854239463806,
+      0.007779791951179504,
+      0.011859653517603874,
+      0.02788960188627243,
+      0.014030077494680882,
+      0.003444872098043561,
+      0.009265102446079254,
+      0.026790980249643326,
+      0.1550045907497406,
+      0.02264922298491001,
+      0.020542116835713387,
+      0.02691551297903061,
+      0.0349360927939415,
+      0.04311029613018036,
+      0.060785774141550064,
+      0.0579032339155674,
+      0.012253336608409882,
+      0.01034984365105629,
+      0.0431213304400444,
+      0.031133808195590973,
+      0.0531679168343544,
+      0.011092206463217735,
+      0.08501562476158142,
+      0.026435570791363716
+    ],
+    "case_type": "Best"
+  },
+  {
+    "track_id": "d__ambient_teknology-the_all_seeing_eye_project-01-cyclops-117-146",
+    "text": "slow",
+    "sample_f1": 0.5,
+    "true_tags": [
+      "ambient"
+    ],
+    "predicted_tags": [
+      "ambient",
+      "new age",
+      "weird"
+    ],
+    "top_predictions": [
+      {
+        "tag": "ambient",
+        "probability": 0.9563925266265869,
+        "threshold": 0.85,
+        "is_true": true,
+        "is_predicted": true
+      },
+      {
+        "tag": "new age",
+        "probability": 0.7056021690368652,
+        "threshold": 0.1,
+        "is_true": false,
+        "is_predicted": true
+      },
+      {
+        "tag": "weird",
+        "probability": 0.7041162252426147,
+        "threshold": 0.7,
+        "is_true": false,
+        "is_predicted": true
+      },
+      {
+        "tag": "indian",
+        "probability": 0.6749521493911743,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "electronic",
+        "probability": 0.515528678894043,
+        "threshold": 0.65,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "eastern",
+        "probability": 0.33505937457084656,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "techno",
+        "probability": 0.2917512059211731,
+        "threshold": 0.7999999999999999,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "trance",
+        "probability": 0.2135276049375534,
+        "threshold": 0.7999999999999999,
+        "is_true": false,
+        "is_predicted": false
+      }
+    ],
+    "num_nodes": 29,
+    "num_edges": 180,
+    "edge_counts": {
+      "temporal": 110,
+      "harmonic": 32,
+      "timbral": 38
+    },
+    "relation_attention_mean": {
+      "temporal": 0.26363635063171387,
+      "harmonic": 0.59375,
+      "timbral": 0.5789473652839661
+    },
+    "segment_attention": [
+      0.019382229074835777,
+      0.044242117553949356,
+      0.0655171275138855,
+      0.015983186662197113,
+      0.10349190980195999,
+      0.07051670551300049,
+      0.10903680324554443,
+      0.04347442835569382,
+      0.038290586322546005,
+      0.03807634860277176,
+      0.01672619767487049,
+      0.02761664427816868,
+      0.0663171038031578,
+      0.014175307005643845,
+      0.018189962953329086,
+      0.05051228776574135,
+      0.012040049768984318,
+      0.016803914681077003,
+      0.02001679129898548,
+      0.01667776331305504,
+      0.016061857342720032,
+      0.015560632571578026,
+      0.021723294630646706,
+      0.020663484930992126,
+      0.007300732657313347,
+      0.016347192227840424,
+      0.009854817762970924,
+      0.012478601187467575,
+      0.07292202115058899
+    ],
+    "case_type": "Typical"
+  },
+  {
+    "track_id": "f__various_artists-south_by_southwest_compilation-13-til_my_cup_runs_over_four_stones-88-117",
+    "text": "beat",
+    "sample_f1": 0.0,
+    "true_tags": [
+      "jazz"
+    ],
+    "predicted_tags": [
+      "techno",
+      "electronic",
+      "dance",
+      "new age"
+    ],
+    "top_predictions": [
+      {
+        "tag": "techno",
+        "probability": 0.9535436630249023,
+        "threshold": 0.7999999999999999,
+        "is_true": false,
+        "is_predicted": true
+      },
+      {
+        "tag": "electronic",
+        "probability": 0.8863471150398254,
+        "threshold": 0.65,
+        "is_true": false,
+        "is_predicted": true
+      },
+      {
+        "tag": "dance",
+        "probability": 0.6103421449661255,
+        "threshold": 0.6,
+        "is_true": false,
+        "is_predicted": true
+      },
+      {
+        "tag": "trance",
+        "probability": 0.546825110912323,
+        "threshold": 0.7999999999999999,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "indian",
+        "probability": 0.5430851578712463,
+        "threshold": 0.9,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "weird",
+        "probability": 0.40419459342956543,
+        "threshold": 0.7,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "ambient",
+        "probability": 0.3532744348049164,
+        "threshold": 0.85,
+        "is_true": false,
+        "is_predicted": false
+      },
+      {
+        "tag": "rock",
+        "probability": 0.32870450615882874,
+        "threshold": 0.75,
+        "is_true": false,
+        "is_predicted": false
+      }
+    ],
+    "num_nodes": 29,
+    "num_edges": 222,
+    "edge_counts": {
+      "temporal": 110,
+      "harmonic": 54,
+      "timbral": 58
+    },
+    "relation_attention_mean": {
+      "temporal": 0.26363635063171387,
+      "harmonic": 0.4814814627170563,
+      "timbral": 0.5000000298023224
+    },
+    "segment_attention": [
+      0.015022506937384605,
+      0.02874813787639141,
+      0.01021216157823801,
+      0.043249741196632385,
+      0.020415406674146652,
+      0.01613519713282585,
+      0.03423379361629486,
+      0.024239804595708847,
+      0.009589191526174545,
+      0.05636395141482353,
+      0.06027544289827347,
+      0.04849844053387642,
+      0.01798977702856064,
+      0.022159183397889137,
+      0.025053171440958977,
+      0.05105900019407272,
+      0.06408733129501343,
+      0.012111020274460316,
+      0.01376587338745594,
+      0.04917939752340317,
+      0.07969802618026733,
+      0.033578142523765564,
+      0.03177589550614357,
+      0.028119800612330437,
+      0.01564478501677513,
+      0.025365915149450302,
+      0.016121920198202133,
+      0.12230958044528961,
+      0.02499750629067421
+    ],
+    "case_type": "Challenging"
+  }
+]

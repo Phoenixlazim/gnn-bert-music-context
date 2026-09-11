@@ -1,0 +1,47 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Raw / heavy data
+data/raw/
+data/processed/feats/
+data/processed/melspec/
+data/processed/graphs/
+data/processed/bert_cache*.pt
+
+# Keep lightweight graph samples
+!data/processed/graph_samples/
+!data/processed/graph_samples/**
+
+# Training checkpoints / large artifacts
+results/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Local logs / caches
+*.log
+.cache/
+huggingface/
+wandb/
+
+# Temporary / build
+dist/
+build/
+*.egg-info/
+temp/
+tmp/
+
+# Submission ZIPs
+*.zip

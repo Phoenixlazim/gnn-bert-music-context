@@ -1,0 +1,167 @@
+[
+  {
+    "track_id": "d__ambient_teknology-the_all_seeing_eye_project-01-cyclops-117-146",
+    "text": "slow",
+    "true_tags": [
+      "ambient"
+    ],
+    "predicted_tags": [
+      "ambient",
+      "new age"
+    ],
+    "top5": [
+      {
+        "tag": "ambient",
+        "probability": 0.843326210975647
+      },
+      {
+        "tag": "electronic",
+        "probability": 0.5968135595321655
+      },
+      {
+        "tag": "techno",
+        "probability": 0.4930481016635895
+      },
+      {
+        "tag": "indian",
+        "probability": 0.4691981077194214
+      },
+      {
+        "tag": "new age",
+        "probability": 0.40026402473449707
+      }
+    ]
+  },
+  {
+    "track_id": "d__utopia_banished-night_of_the_black_wyvern-03-the_plague-146-175",
+    "text": "guitar",
+    "true_tags": [
+      "rock",
+      "metal"
+    ],
+    "predicted_tags": [],
+    "top5": [
+      {
+        "tag": "country",
+        "probability": 0.7923508882522583
+      },
+      {
+        "tag": "rock",
+        "probability": 0.6231954097747803
+      },
+      {
+        "tag": "indian",
+        "probability": 0.49633556604385376
+      },
+      {
+        "tag": "classical",
+        "probability": 0.4727264940738678
+      },
+      {
+        "tag": "folk",
+        "probability": 0.3761482834815979
+      }
+    ]
+  },
+  {
+    "track_id": "e__seth_carlin-mozart_in_the_age_of_enlightenment-12-sonata_15_in_c_minor__allegro_georg_benda-88-117",
+    "text": "piano",
+    "true_tags": [
+      "classical"
+    ],
+    "predicted_tags": [
+      "classical"
+    ],
+    "top5": [
+      {
+        "tag": "classical",
+        "probability": 0.7514665126800537
+      },
+      {
+        "tag": "indian",
+        "probability": 0.4428894519805908
+      },
+      {
+        "tag": "medieval",
+        "probability": 0.20166055858135223
+      },
+      {
+        "tag": "eastern",
+        "probability": 0.19312980771064758
+      },
+      {
+        "tag": "baroque",
+        "probability": 0.16165806353092194
+      }
+    ]
+  },
+  {
+    "track_id": "f__jacob_heringman_and_catherine_king-luis_milan_el_maestro-23-romance_sospirastes_baldovinos-117-146",
+    "text": "guitar, vocal, no vocals, no vocal",
+    "true_tags": [
+      "classical"
+    ],
+    "predicted_tags": [
+      "rock",
+      "pop",
+      "new age",
+      "jazz"
+    ],
+    "top5": [
+      {
+        "tag": "rock",
+        "probability": 0.8043078780174255
+      },
+      {
+        "tag": "pop",
+        "probability": 0.7719703912734985
+      },
+      {
+        "tag": "country",
+        "probability": 0.717685341835022
+      },
+      {
+        "tag": "jazz",
+        "probability": 0.6246045827865601
+      },
+      {
+        "tag": "indian",
+        "probability": 0.5893929600715637
+      }
+    ]
+  },
+  {
+    "track_id": "f__various_artists-south_by_southwest_compilation-13-til_my_cup_runs_over_four_stones-88-117",
+    "text": "beat",
+    "true_tags": [
+      "jazz"
+    ],
+    "predicted_tags": [
+      "techno",
+      "electronic",
+      "new age"
+    ],
+    "top5": [
+      {
+        "tag": "techno",
+        "probability": 0.9293355941772461
+      },
+      {
+        "tag": "dance",
+        "probability": 0.8502717614173889
+      },
+      {
+        "tag": "electronic",
+        "probability": 0.8228259682655334
+      },
+      {
+        "tag": "ambient",
+        "probability": 0.5286341309547424
+      },
+      {
+        "tag": "indian",
+        "probability": 0.501882016658783
+      }
+    ]
+  }
+]

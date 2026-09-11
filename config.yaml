@@ -1,0 +1,130 @@
+# ============================================================
+# GNN-BERT Music Context Understanding — central config
+# Everything downstream reads from this file. Change here, not in code.
+# ============================================================
+
+seed: 425
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  splits: data/splits
+  results: results
+
+# ------------------------------------------------------------
+# Audio front-end (shared by both datasets)
+# ------------------------------------------------------------
+audio:
+  sr: 22050
+  hop_length: 512
+  n_fft: 2048
+  n_mels: 128            # for the CNN baseline (B2) only
+  n_mfcc: 13
+  n_chroma: 12
+
+  # Fixed-window segmentation (NOT beat-sync — deliberate, see report §3)
+  window_sec: 1.0
+  stride_sec: 1.0        # == window_sec -> non-overlapping
+  min_nodes: 8           # tracks with fewer usable windows are dropped
+  max_nodes: 64          # truncate long tracks (GTZAN/MTT ~29-30s -> ~30)
+
+  # Junk-clip filters. MTT ships a handful of zero-length / silent mp3s.
+  min_file_bytes: 4096
+  min_rms: 1.0e-4        # track-level mean RMS below this -> treated as silent
+
+  save_melspec: true     # cache log-mel for the CNN baseline
+
+# ------------------------------------------------------------
+# Multi-relation graph construction
+# relation ids: 0=temporal  1=harmonic(chroma)  2=timbral(mfcc)
+# ------------------------------------------------------------
+graph:
+  relations: [temporal, harmonic, timbral]
+  temporal_hops: [1, 2]
+  knn_k: 2
+  knn_tau: 0.4          # cosine sim threshold; 0.0 disables thresholding
+  knn_exclude_adjacent: true   # if true, kNN edges may not duplicate hop-1 pairs
+  add_self_loops: false         # RGAT layer adds its own root transform
+
+  # C1 control experiment: degree-preserving double-edge swap
+  shuffle_control:
+    enabled: false
+    swaps_per_edge: 10
+
+# ------------------------------------------------------------
+# Datasets
+# ------------------------------------------------------------
+datasets:
+
+  gtzan:
+    audio_dir: data/raw/gtzan/genres_original
+    ext: '.wav'                # Kaggle mirror ships .wav — set accordingly
+    task: multiclass
+    # labels come from the parent folder name
+    genres: [blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock]
+    split: {train: 0.7, val: 0.1, test: 0.2}   # stratified, fixed seed
+
+  magnatagatune:
+    audio_dir: data/raw/mtt
+    annotations: data/raw/mtt/annotations_final.csv
+    ext: .mp3
+    task: multilabel
+    subsample: 4000         # compute constraint — STATE THIS IN THE REPORT
+    # Tags are routed FIRST (see tag_split), then the top-N of each pool is
+    # taken. Selecting a single global top-K starves the target pool: MTT's
+    # head of the distribution is overwhelmingly instrument/timbre tags.
+    n_target_tags: 20
+    n_text_tags: 20
+    min_positives: 20       # drop target tags rarer than this (macro-F1 noise)
+    # Official split is by mp3 folder prefix (00..f)
+    split_by_folder:
+      train: ['0','1','2','3','4','5','6','7','8','9','a','b']
+      val:   ['c']
+      test:  ['d','e','f']
+
+# ------------------------------------------------------------
+# Leakage-controlled vocabulary split  (our signature contribution)
+#
+# The top-K tags are computed from the annotations file, then routed into
+# TEXT (fed to BERT) vs TARGET (predicted) by keyword match below.
+# `naive` mode feeds ALL tags as text AND predicts them -> the leaky setup
+# most submissions will use. We report both.
+# ------------------------------------------------------------
+tag_split:
+  mode: controlled
+  target_exclude: [classic, jazzy, classical guitar]          # controlled | naive
+  text_keywords:            # instrument / timbre / production descriptors
+    [guitar, drum, drums, piano, violin, cello, flute, harpsichord, harp,
+     sitar, synth, synthesizer, strings, horn, horns, trumpet, sax, organ,
+     banjo, bass, beat, beats, vocal, vocals, voice, male, female, choir,
+     choral, singing, singer, no vocal, no vocals, no voice, no singing,
+     instrumental, solo, loud, quiet, soft, fast, slow, distortion,
+     electric, acoustic, percussion, clapping, water, birds, foreign,
+     woman, man, arabic, oriental, sitar, drone, echo, silence]
+  target_keywords:          # genre / mood / context  (wins ties)
+    [rock, classical, techno, opera, pop, jazz, blues, country, metal, punk,
+     folk, dance, indian, medieval, baroque, new age, ambient, electronic,
+     hard rock, soft rock, classic, weird, upbeat, mellow, calm, relaxing,
+     sad, happy, dark, heavy, funky, funk, chant, trance, house, disco,
+     reggae, eastern, modern, orchestra, orchestral, symphony, choral music]
+  # tags matching neither list are dropped from BOTH sides and logged.
+  # tags matching BOTH are assigned to TARGET (conservative).
+
+# ------------------------------------------------------------
+# Text encoder
+# ------------------------------------------------------------
+bert:
+  model_name: distilbert-base-uncased
+  max_length: 64            # tag strings are short; 64 is plenty
+  # Ablation ladder A0-A5 + C1 ALL use frozen pretrained features.
+  # The Task-1 deliverable run sets freeze_bert: false separately.
+  freeze_bert: true
+  unfreeze_last_n_blocks: 1 # only used when freeze_bert: false
+  cache_file: data/processed/bert_cache.pt
+
+# ------------------------------------------------------------
+# Runtime
+# ------------------------------------------------------------
+runtime:
+  num_workers: 0            # 0 -> auto (cpu_count - 1) for feature extraction
+  device: cuda
